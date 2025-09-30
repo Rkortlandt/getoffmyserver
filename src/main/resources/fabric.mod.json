@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "getoffmyserver",
+  "version": "${version}",
+  "name": "getoffmyserver",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/getoffmyserver/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "fabric-datagen": [
+      "org.rkortlandt.getoffmyserver.client.GetoffmyserverDataGenerator"
+    ],
+    "main": [
+      "org.rkortlandt.getoffmyserver.GetOffMyServer"
+    ]
+  },
+  "mixins": [
+    "getoffmyserver.mixins.json",
+    {
+      "config": "getoffmyserver.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
